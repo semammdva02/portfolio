@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Todo List — Səma Məmmədova tərəfindən hazırlanmış frontend layihəsi."
+    >
+
+    <title>Todo List — Səma Məmmədova</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="todo.css">
+</head>
+
+<body>
+
+    <div class="page-shell">
+
+        <!-- NAVIGATION -->
+        <header class="topbar">
+            <div class="container nav-inner">
+
+                <a href="index.html" class="brand">
+                    <span class="brand-mark">SM</span>
+                    <span>
+                        <strong>Səma Məmmədova</strong>
+                        <small>Frontend Developer</small>
+                    </span>
+                </a>
+
+                <div class="nav-actions">
+                    <a href="index.html" class="back-link">
+                        <span>←</span>
+                        Portfolio
+                    </a>
+
+                    <button
+                        type="button"
+                        class="theme-btn"
+                        id="themeToggle"
+                        aria-label="Tema dəyişdir"
+                    >
+                        <span id="themeIcon">☾</span>
+                    </button>
+                </div>
+
+            </div>
+        </header>
+
+
+        <!-- HERO -->
+        <main>
+
+            <section class="project-hero">
+                <div class="container hero-grid">
+
+                    <div class="hero-copy">
+
+                        <div class="eyebrow">
+                            <span class="status-dot"></span>
+                            FRONTEND PROJECT
+                        </div>
+
+                        <h1>
+                            Todo
+                            <span>List.</span>
+                        </h1>
+
+                        <p class="hero-description">
+                            Gündəlik tapşırıqları idarə etmək üçün hazırlanmış
+                            sadə, sürətli və responsive task management tətbiqi.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-number">
+                        <span>01</span>
+                        <small>PROJECT</small>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- APP -->
+            <section class="todo-section">
+                <div class="container">
+
+                    <div class="app-card">
+
+                        <!-- APP HEADER -->
+                        <div class="app-header">
+
+                            <div>
+                                <span class="app-label">MY TASKS</span>
+                                <h2>Tapşırıqlarım</h2>
+                                <p>
+                                    Tapşırıqlarınızı əlavə edin və gündəlik
+                                    işlərinizi daha rahat idarə edin.
+                                </p>
+                            </div>
+
+                            <div class="date-badge" id="todayDate"></div>
+
+                        </div>
+
+
+                        <!-- STATS -->
+                        <div class="stats-grid">
+
+                            <div class="stat-card">
+                                <span class="stat-icon">◎</span>
+                                <div>
+                                    <strong id="totalCount">0</strong>
+                                    <span>Ümumi</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <span class="stat-icon">◌</span>
+                                <div>
+                                    <strong id="activeCount">0</strong>
+                                    <span>Aktiv</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <span class="stat-icon">✓</span>
+                                <div>
+                                    <strong id="completedCount">0</strong>
+                                    <span>Tamamlanan</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- PROGRESS -->
+                        <div class="progress-section">
+
+                            <div class="progress-info">
+                                <span>Gündəlik progress</span>
+                                <strong id="progressText">0%</strong>
+                            </div>
+
+                            <div class="progress-track">
+                                <div
+                                    class="progress-bar"
+                                    id="progressBar"
+                                ></div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- FORM -->
+                        <form class="task-form" id="taskForm">
+
+                            <div class="input-wrapper">
+                                <span class="input-icon">＋</span>
+
+                                <input
+                                    id="taskInput"
+                                    type="text"
+                                    placeholder="Yeni tapşırıq yazın..."
+                                    maxlength="120"
+                                    autocomplete="off"
+                                    aria-label="Yeni tapşırıq"
+                                >
+                            </div>
+
+                            <button type="submit" class="add-btn">
+                                Əlavə et
+                                <span>↗</span>
+                            </button>
+
+                        </form>
+
+
+                        <!-- FILTERS -->
+                        <div class="task-toolbar">
+
+                            <div class="filters" id="filters">
+
+                                <button
+                                    type="button"
+                                    class="filter active"
+                                    data-filter="all"
+                                >
+                                    Hamısı
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="filter"
+                                    data-filter="active"
+                                >
+                                    Aktiv
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="filter"
+                                    data-filter="completed"
+                                >
+                                    Tamamlanan
+                                </button>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="clear-btn"
+                                id="clearCompleted"
+                            >
+                                Tamamlananları sil
+                            </button>
+
+                        </div>
+
+
+                        <!-- TASK LIST -->
+                        <ul class="task-list" id="taskList"></ul>
+
+
+                        <!-- EMPTY STATE -->
+                        <div class="empty-state" id="emptyState">
+
+                            <div class="empty-icon">✓</div>
+
+                            <h3>Burada hələ tapşırıq yoxdur</h3>
+
+                            <p>
+                                Yuxarıdakı sahədən yeni tapşırıq əlavə edərək
+                                başlaya bilərsiniz.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- PROJECT INFO -->
+            <section class="project-info">
+                <div class="container">
+
+                    <div class="info-grid">
+
+                        <div class="info-block">
+                            <span>01 / ABOUT</span>
+                            <h2>Sadə interfeys, real istifadə ssenarisi.</h2>
+                        </div>
+
+                        <div class="info-block">
+                            <p>
+                                Bu layihədə istifadəçi tapşırıqları əlavə edə,
+                                tamamlanmış kimi işarələyə, silə və filter edə
+                                bilər. Məlumatlar browser-in LocalStorage
+                                mexanizmi ilə saxlanılır.
+                            </p>
+
+                            <p>
+                                Layihənin əsas məqsədi vanilla JavaScript ilə
+                                interaktiv istifadəçi interfeysinin qurulması
+                                və state məlumatlarının idarə edilməsidir.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container footer-inner">
+
+                <span>© 2026 Səma Məmmədova</span>
+
+                <a href="index.html">
+                    ← Portfolioya qayıt
+                </a>
+
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="todo.js"></script>
+
+</body>
+</html>

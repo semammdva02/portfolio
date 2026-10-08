@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="University Management System — Səma Məmmədova tərəfindən hazırlanmış frontend layihəsi."
+    >
+
+    <title>University Management System — Səma Məmmədova</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="universitet.css">
+</head>
+
+<body>
+
+    <div class="page-shell">
+
+        <!-- NAVBAR -->
+        <header class="topbar">
+
+            <div class="container nav-inner">
+
+                <a href="index.html" class="brand">
+
+                    <span class="brand-mark">SM</span>
+
+                    <span>
+                        <strong>Səma Məmmədova</strong>
+                        <small>Frontend Developer</small>
+                    </span>
+
+                </a>
+
+
+                <div class="nav-actions">
+
+                    <a href="index.html" class="back-link">
+                        ← Portfolio
+                    </a>
+
+                    <button
+                        type="button"
+                        class="theme-btn"
+                        id="themeToggle"
+                        aria-label="Tema dəyişdir"
+                    >
+                        <span id="themeIcon">☾</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+        <main>
+
+            <section class="project-hero">
+
+                <div class="container hero-grid">
+
+                    <div>
+
+                        <div class="eyebrow">
+
+                            <span class="status-dot"></span>
+
+                            FRONTEND PROJECT
+
+                        </div>
+
+
+                        <h1>
+                            University
+                            <span>Management.</span>
+                        </h1>
+
+
+                        <p class="hero-description">
+
+                            Tələbə məlumatlarının, qiymətlərin,
+                            davamiyyətin və akademik nəticələrin
+                            idarə olunması üçün hazırlanmış
+                            interaktiv dashboard sistemi.
+
+                        </p>
+
+
+                        <div class="tech-stack">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                            <span>Responsive UI</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-number">
+
+                        <span>02</span>
+
+                        <small>PROJECT</small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DASHBOARD -->
+            <section class="dashboard-section">
+
+                <div class="container">
+
+                    <div class="dashboard">
+
+                        <!-- DASHBOARD HEADER -->
+                        <div class="dashboard-header">
+
+                            <div>
+
+                                <span class="app-label">
+                                    ACADEMIC DASHBOARD
+                                </span>
+
+                                <h2>
+                                    Universitet İdarəetmə Sistemi
+                                </h2>
+
+                                <p>
+                                    Tələbələri, qiymətləri və
+                                    davamiyyəti bir paneldən idarə edin.
+                                </p>
+
+                            </div>
+
+
+                            <div class="system-status">
+
+                                <span class="status-dot"></span>
+
+                                Sistem aktivdir
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- KPI -->
+                        <div
+                            class="kpi-grid"
+                            id="kpiGrid"
+                        ></div>
+
+
+                        <!-- TABS -->
+                        <nav
+                            class="dashboard-tabs"
+                            id="dashboardTabs"
+                            aria-label="Dashboard bölmələri"
+                        >
+
+                            <button
+                                type="button"
+                                class="dashboard-tab active"
+                                data-view="students"
+                            >
+                                <span>01</span>
+                                Tələbələr
+                            </button>
+
+                            <button
+                                type="button"
+                                class="dashboard-tab"
+                                data-view="grades"
+                            >
+                                <span>02</span>
+                                Qiymətlər
+                            </button>
+
+                            <button
+                                type="button"
+                                class="dashboard-tab"
+                                data-view="attendance"
+                            >
+                                <span>03</span>
+                                Davamiyyət
+                            </button>
+
+                            <button
+                                type="button"
+                                class="dashboard-tab"
+                                data-view="reports"
+                            >
+                                <span>04</span>
+                                Hesabat
+                            </button>
+
+                        </nav>
+
+
+                        <!-- VIEW -->
+                        <div
+                            class="dashboard-content"
+                            id="dashboardView"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROJECT INFO -->
+            <section class="project-info">
+
+                <div class="container">
+
+                    <div class="info-grid">
+
+                        <div>
+
+                            <span class="section-label">
+                                02 / ABOUT
+                            </span>
+
+                            <h2>
+                                Kiçik miqyaslı real
+                                idarəetmə sistemi.
+                            </h2>
+
+                        </div>
+
+
+                        <div>
+
+                            <p>
+                                Bu layihə universitet mühitində tələbə
+                                məlumatlarının idarə edilməsini
+                                simulyasiya edir.
+                            </p>
+
+                            <p>
+                                İstifadəçi tələbə əlavə edə, tələbələrin
+                                qiymətlərini dəyişə, davamiyyət məlumatlarını
+                                idarə edə və akademik nəticələri hesabat
+                                şəklində görə bilər.
+                            </p>
+
+                            <div class="feature-list">
+
+                                <span>✓ CRUD məntiqi</span>
+                                <span>✓ Dynamic calculations</span>
+                                <span>✓ LocalStorage</span>
+                                <span>✓ Responsive dashboard</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <div class="container footer-inner">
+
+                <span>
+                    © 2026 Səma Məmmədova
+                </span>
+
+                <a href="index.html">
+                    ← Portfolioya qayıt
+                </a>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <script src="i18n.js"></script>
+    <script src="universitet.js"></script>
+
+</body>
+</html>
